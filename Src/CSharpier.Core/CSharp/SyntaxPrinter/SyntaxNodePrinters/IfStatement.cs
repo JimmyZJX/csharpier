@@ -27,7 +27,10 @@ internal static class IfStatement {
         );
 
         if (node.Else != null) {
-            docs.Append(" ", Node.Print(node.Else, context));
+            docs.Append(
+                (node.Statement is BlockSyntax) ? " " : Doc.Null,
+                Node.Print(node.Else, context)
+            );
         }
 
         return Doc.Concat(ref docs);
