@@ -13,7 +13,7 @@ internal static class ImplicitArrayCreationExpression
             Token.Print(node.OpenBracketToken, context),
             Doc.Concat(commas),
             Token.Print(node.CloseBracketToken, context),
-            Doc.Line,
+            " ",
             InitializerExpression.Print(node.Initializer, context)
         );
     }
