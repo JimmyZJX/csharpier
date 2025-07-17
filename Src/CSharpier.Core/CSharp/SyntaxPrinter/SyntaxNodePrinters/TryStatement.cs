@@ -12,9 +12,7 @@ internal static class TryStatement {
         docs.Append(Token.Print(node.TryKeyword, context));
         docs.Append(Block.Print(node.Block, context));
         docs.Append(node.Catches.Any() ? " " : Doc.Null);
-        docs.Append(
-            Doc.Join(Doc.HardLine, node.Catches.Select(o => CatchClause.Print(o, context)))
-        );
+        docs.Append(Doc.Join(" ", node.Catches.Select(o => CatchClause.Print(o, context))));
 
         if (node.Finally != null) {
             docs.Append(" ", FinallyClause.Print(node.Finally, context));
